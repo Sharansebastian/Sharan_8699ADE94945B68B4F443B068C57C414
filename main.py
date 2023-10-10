@@ -1,15 +1,16 @@
-def factorial(n):
-    if n == 0:
-        return 1
-    else:
-        return n * factorial(n - 1)
+#3.1 Write a function called linear_search_product that takes the list of products and a target product name as input. The function should perform a linear search to find the target product in the list and return a list of indices of all occurrences of the product if found, or an empty list if the product is not found.
+def linear_search_product(product_list, target_product):
+    indices = []
+    for i, product in enumerate(product_list):
+        if product == target_product:
+            indices.append(i)
+    return indices
 
-# Input a number
-num = int(input("Enter a number: "))
-
-if num < 0:
-    print("Factorial is not defined for negative numbers.")
-elif num == 0:
-    print("The factorial of 0 is 1.")
+# Example usage:
+products = ["apple", "banana", "apple", "orange", "apple"]
+target = "apple"
+result = linear_search_product(products, target)
+if result:
+    print(f"The product '{target}' was found at indices: {result}")
 else:
-    print(f"The factorial of {num} is {factorial(num)}.")
+    print(f"The product '{target}' was not found in the list.")
